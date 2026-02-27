@@ -302,6 +302,8 @@ void lookforContacts(vector<string>& name_contacts, vector<string>& phone_contac
                 
 				// Tach input thanh tung tu rieng va tim moi tu nhu chuoi con trong ten lien he.
 				// Bat ky lien he nao co ten chua it nhat mot tu khop se duoc them vao ket qua.
+
+				search_input += ' '; // Them khoang trang vao cuoi de tach tu cuoi cung
 				for (int i = 0; i < search_input.length(); i++)
 				{
 					if (search_input[i] == ' ')
@@ -313,7 +315,7 @@ void lookforContacts(vector<string>& name_contacts, vector<string>& phone_contac
 						compare_results.push_back(substring);
 						search_input.erase(0, i + 1);
 						substring.clear();
-							i = -1; // Dat lai vi tri do i++ trong vong lap
+						i = -1; // Dat lai vi tri do i++ trong vong lap
 					}
 				}
 				for (int i = 0; i < name_contacts.size(); i++)
