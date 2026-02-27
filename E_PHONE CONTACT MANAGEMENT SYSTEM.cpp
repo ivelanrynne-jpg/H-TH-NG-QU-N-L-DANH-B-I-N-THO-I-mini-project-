@@ -302,6 +302,8 @@ void lookforContacts(vector<string>& name_contacts, vector<string>& phone_contac
                 
 				// Parse input into individual words and search each word as a substring in contact names.
 				// Any contact whose name contains at least one matching word is added to results.
+
+				search_input += ' '; // Add space at end to parse last word
 				for (int i = 0; i < search_input.length(); i++)
 				{
 					if (search_input[i] == ' ')
@@ -313,7 +315,7 @@ void lookforContacts(vector<string>& name_contacts, vector<string>& phone_contac
 						compare_results.push_back(substring);
 						search_input.erase(0, i + 1);
 						substring.clear();
-							i = -1; // Reset for next iteration due to i++ in loop
+						i = -1; // Reset for next iteration due to i++ in loop
 					}
 				}
 				for (int i = 0; i < name_contacts.size(); i++)
